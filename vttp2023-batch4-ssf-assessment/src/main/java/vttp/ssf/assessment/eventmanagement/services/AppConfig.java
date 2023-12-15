@@ -34,7 +34,7 @@ public class AppConfig {
    @Value("${spring.redis.database}")
    private Integer redisDatabase;
 
-   @Bean(DatabaseService.BEAN_REDIS)
+   @Bean
    public RedisTemplate<String, String> createRedisConnection() {
      
       RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();

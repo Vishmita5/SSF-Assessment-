@@ -15,7 +15,7 @@
         <h1>Register Event </h1>
         <hr>
 
-       <!-- <form method="POST" th:action="@{/employees/saveEmployee}" th:object="${employee}"> //post method --> 
+       <form method="POST" th:action="@{/processRegistration}" th:object="${event}">
             
         
         <div class="mb-3">
@@ -28,19 +28,19 @@
                 <label for="birthDate" class="form-label">DOB</label>
                 <input type="date" class="form-control" name="birthDate" th:field="*{birthDate}" />
             </div>
-            <div class="alert alert-danger" th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"></div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"> Birthdate should be past </div>
     
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" th:field="*{email}" />
             </div>
-            <div class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"> Email format should be as username@domain.com </div>
 
             <div class="mb-3">
                 <label for="mobileNo" class="form-label">Mobile No</label>
                 <input type="text" class="form-control" name="mobileNo" th:field="*{mobileNo}" />
             </div>
-            <div class="alert alert-danger" th:if="${#fields.hasErrors('mobileNo')}" th:errors="*{mobileNo}"></div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('mobileNo')}" th:errors="*{mobileNo}"> Mobile number must begin with 8 or 9 </div>
 
             <div class="mb-3">
                 <label for="gender" class="form-label">Gender</label>

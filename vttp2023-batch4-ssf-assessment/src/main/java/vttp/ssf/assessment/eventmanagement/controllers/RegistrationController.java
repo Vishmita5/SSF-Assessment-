@@ -16,7 +16,7 @@ import vttp.ssf.assessment.eventmanagement.models.Event;
 import vttp.ssf.assessment.eventmanagement.models.Participant;
 
 @Controller
-@RequestMapping
+@RequestMapping (path="/")
 public class RegistrationController {
     
 
@@ -35,8 +35,9 @@ public class RegistrationController {
     @GetMapping("/register")
     public String registerEvent(Model model) {
           User p = new user();
-        model.addAttribute("name", emp);
-        model.addAttribute("email", User)
+        model.addAttribute("name", user);
+        model.addAttribute("email", user);
+
 
         return "view1";
     }
@@ -45,7 +46,7 @@ public class RegistrationController {
     // TODO: Task 7
 
 
-    @PostMapping("/saveEmployee")
+    @PostMapping("/processRegistration")
     public String processRegsitration(@Valid @ModelAttribute("participant") Participant participant, BindingResult result,
             Model model) throws FileNotFoundException {
 
@@ -55,4 +56,7 @@ public class RegistrationController {
         model.addAttribute("participant", participant);
         return "view2";
     }
+
+
+
 }

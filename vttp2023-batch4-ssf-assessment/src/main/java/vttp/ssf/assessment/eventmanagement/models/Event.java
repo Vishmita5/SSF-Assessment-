@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 public class Event {
 
-
     private Integer eventID;
 
     private String eventName;
